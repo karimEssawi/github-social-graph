@@ -53,3 +53,5 @@ for repo in repos[0:100]:
 cypher = graph.cypher
 cypher.execute("MATCH (d:DEV)-[:CONTRIBUTES]->(m)<-[:CONTRIBUTES]-(coDevs:DEV) " +
                    "CREATE (coDevs)-[:KNOWS]->(d)")
+                    # MERGE (coDevs)-[:KNOWS]->(d)
+                    # WHERE coDevs <> d
